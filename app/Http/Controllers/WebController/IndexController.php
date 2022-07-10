@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use Cache;
+use Route;
 
 class IndexController extends Controller
 {
@@ -14,14 +15,8 @@ class IndexController extends Controller
     return $this->success(true);
   }
 
-  public function statistics(Request $request)
+  public function getSiteVisits(Request $request)
   {
-    if (!$request->uri) {
-      return $this->error('uri error');
-    }
-
-    Cache::store('redis')->increment($request->uri);
-
-    return $this->success(true);
+    return $this->success(Cache::store('redis')->get(Route::current()->uri));
   }
 }

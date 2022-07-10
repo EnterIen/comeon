@@ -18,7 +18,7 @@ class SiteVisit
      */
     public function handle(Request $request, Closure $next)
     {
-        Cache::store('redis')->increment($request->url());
+        Cache::store('redis')->increment($request->path());
 
         return $next($request);
     }

@@ -24,4 +24,4 @@ Route::get('phpinfo', function () {
 });
 
 Route::get('index', [IndexController::class, 'index']);
-Route::post('index/statistics', [IndexController::class, 'statistics']);
+Route::get('page/visits', [IndexController::class, 'getSiteVisits']);
