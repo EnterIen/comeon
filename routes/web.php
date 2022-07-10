@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Redis;
 
+use App\Http\Controllers\WebController\IndexController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +22,6 @@ Route::get('/', function () {
 Route::get('phpinfo', function () {
   return phpinfo();
 });
+
+Route::get('index', [IndexController::class, 'index']);
+Route::post('index/statistics', [IndexController::class, 'statistics']);
