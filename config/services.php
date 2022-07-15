@@ -30,4 +30,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'comeon-kingkong' => [
+        'appid'  => env('CLIENT_ID'),
+        'secret' => env('CLIENT_SECRET'),
+        'callback' => 'http://c.comeon.com/auth/callback'
+    ]
+
 ];

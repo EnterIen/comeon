@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redis;
 
-use App\Http\Controllers\WebController\IndexController;
+use App\Http\Controllers\Web\IndexController;
+use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +27,7 @@ Route::get('phpinfo', function () {
 Route::get('index', [IndexController::class, 'index']);
 
 Route::get('page/visits', [IndexController::class, 'getSiteVisits']);
+
+
+Route::get('/auth/entry', [LoginController::class, 'JumpKingKong']);
+Route::get('/auth/callback', [LoginController::class, 'AuthCallback']);
