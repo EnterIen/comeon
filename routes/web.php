@@ -29,5 +29,5 @@ Route::get('index', [IndexController::class, 'index']);
 Route::get('page/visits', [IndexController::class, 'getSiteVisits']);
 
 
-Route::get('/auth/entry', [LoginController::class, 'JumpKingKong']);
+Route::get('/auth/entry', [LoginController::class, 'AuthEntry']);
 Route::get('/auth/callback', [LoginController::class, 'AuthCallback']);
