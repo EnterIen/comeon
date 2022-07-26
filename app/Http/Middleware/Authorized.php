@@ -9,6 +9,7 @@ class Authorized
 {
   // 不进行登录验证的接口
   public $exceptions = [
+    '/',
     'auth/entry',
     'auth/callback',
     'page/visits',
@@ -26,7 +27,7 @@ class Authorized
     if (!$request->is($this->exceptions) && !session('token')) {
       return response()->json([
         'status'  => 401,
-        'message' => '未通过用户认证',
+        'message' => session('token'),
         'values'  => '',
       ], 200, [], JSON_UNESCAPED_UNICODE);
     }

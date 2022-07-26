@@ -28,8 +28,8 @@ class LoginController extends Controller
       'scope' => '*',
     ]);
 
-    // return redirect('http://120.77.98.154/oauth/authorize?' . $query);
-    return redirect('http://comeon-kingkong.test/oauth/authorize?' . $query);
+    return redirect('http://120.77.98.154/oauth/authorize?' . $query);
+    // return redirect('http://comeon-kingkong.test/oauth/authorize?' . $query);
 
     return $this->success($query);
   }
@@ -59,9 +59,10 @@ class LoginController extends Controller
     //   ],
     // ]);
 
-    session('token', $code);    // 将金刚颁发的 Token 放入当前应用作为是否通过用户认证的凭证
+    session(['token' => $code]);    // 将金刚颁发的 Token 放入当前应用作为是否通过用户认证的凭证
+    // $request->session()->put('token', $code);    // 将金刚颁发的 Token 放入当前应用作为是否通过用户认证的凭证
 
-    return redirect('http://comeon.test');
+    return redirect('http://47.105.106.78/');
 
     return response($response->getBody());
   }
