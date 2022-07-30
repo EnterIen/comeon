@@ -11,6 +11,7 @@ use Log;
 use Cache;
 use Redis;
 
+
 class LoginController extends Controller
 {
 
@@ -66,6 +67,7 @@ class LoginController extends Controller
     // 
     
     Redis::put('token', $code, 600);
+
 
     return redirect('http://47.105.106.78/');
 
