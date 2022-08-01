@@ -11,6 +11,8 @@ class Authorized
 {
   // 不进行登录验证的接口
   public $exceptions = [
+    '*',
+    '/',
     'auth/entry',
     'auth/callback',
     'page/visits',

@@ -20,6 +20,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::view('broadcast', 'news');
+
 Route::get('phpinfo', function () {
   return phpinfo();
 });
