@@ -5,14 +5,12 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Cache;
-use Redis;
+use Illuminate\Support\Facades\Redis;
 
 class Authorized
 {
   // 不进行登录验证的接口
   public $exceptions = [
-    '*',
-    '/',
     'auth/entry',
     'auth/callback',
     'page/visits',

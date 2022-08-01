@@ -15,7 +15,6 @@ class IndexController extends Controller
     return $this->success(true);
   }
 
-
   public function getSiteVisits(Request $request)
   {
     return $this->success(Cache::store('redis')->get(Route::current()->uri));

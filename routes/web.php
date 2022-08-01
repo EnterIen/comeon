@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redis;
 
 use App\Http\Controllers\Web\IndexController;
+use App\Http\Controllers\Web\TalkController;
 use App\Http\Controllers\Auth\LoginController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,3 +35,8 @@ Route::get('page/visits', [IndexController::class, 'getSiteVisits']);
 
 Route::get('/auth/entry', [LoginController::class, 'AuthEntry']);
 Route::get('/auth/callback', [LoginController::class, 'AuthCallback']);
+
+
+Route::group(['prefix' => 'message'], function () {
+  Route::post('talk/list', [TalkController::class, 'TalkList']);
+});

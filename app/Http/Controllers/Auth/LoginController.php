@@ -9,7 +9,7 @@ use Illuminate\Support\Arr;
 use GuzzleHttp\Client;
 use Log;
 use Cache;
-use Redis;
+use Illuminate\Support\Facades\Redis;
 
 
 class LoginController extends Controller
@@ -66,7 +66,7 @@ class LoginController extends Controller
     // $request->session()->put('token', $code);    // 将金刚颁发的 Token 放入当前应用作为是否通过用户认证的凭证
     // 
     
-    Redis::put('token', $code, 600);
+    Redis::set('token', $code, 600);
 
 
     return redirect('http://47.105.106.78/');
