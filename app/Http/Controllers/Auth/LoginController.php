@@ -31,7 +31,14 @@ class LoginController extends Controller
       'scope' => '*',
     ]);
 
-    return redirect('http://120.77.98.154/oauth/authorize?' . $query);
+    // $query = [
+    //   'client_id'    => config('services.comeon-kingkong.appid'),
+    //   'redirect_uri' => config('services.comeon-kingkong.callback'),
+    //   'response_type'=> 'code',
+    //   'scope' => '*',
+    // ];
+
+    return redirect('http://120.77.98.154:8080/oauth/authorize?' . $query);
     // return redirect('http://comeon-kingkong.test/oauth/authorize?' . $query);
 
     return $this->success($query);
@@ -68,8 +75,7 @@ class LoginController extends Controller
     
     Redis::set('token', $code, 600);
 
-
-    return redirect('http://47.105.106.78/');
+    return redirect('http://120.77.98.154:8081');
 
     return response($response->getBody());
   }

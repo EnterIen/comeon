@@ -38,5 +38,6 @@ Route::get('/auth/callback', [LoginController::class, 'AuthCallback']);
 
 
 Route::group(['prefix' => 'message'], function () {
-  Route::post('talk/list', [TalkController::class, 'TalkList']);
+  Route::post('talk/list', [TalkController::class, 'talks']);
+  Route::post('which/kefu', [TalkController::class, 'whichKefu']);
 });

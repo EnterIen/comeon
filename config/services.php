@@ -33,7 +33,7 @@ return [
     'comeon-kingkong' => [
         'appid'  => env('CLIENT_ID'),
         'secret' => env('CLIENT_SECRET'),
-        'callback' => 'http://47.105.106.78/auth/callback'
+        'callback' => 'http://120.77.98.154/auth/callback'
         // 'callback' => 'http://comeon.test/auth/callback'
     ]
 
