@@ -75,7 +75,7 @@ class LoginController extends Controller
     
     Redis::set('token', $code, 600);
 
-    return redirect('http://120.77.98.154:8081');
+    return redirect('http://120.77.98.154:8081/#/home');
 
     return response($response->getBody());
   }
